@@ -1,0 +1,25 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+@import './font-awesome4';
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+@import '~datatables.net-bs4/css/dataTables.bootstrap4.css';
+html,body{
+	width: 100% !important;
+	height: 100% !important;
+}
+.fs-25{
+	font-size: 25px !important;
+}
+.btn-warning,.badge-warning{
+	color: #ffffff;
+    background-color: #c57f15;
+    border-color: #c57f15;
+}
+.card{
+    border: 0;
+    box-shadow: 0.5rem 0.5rem 1rem 0.5rem  rgba(0, 0, 0, 0.2);
+}

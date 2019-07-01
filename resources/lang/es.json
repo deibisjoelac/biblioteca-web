@@ -1,0 +1,25 @@
+{
+
+
+	"Page Not Found" : "404 - Página no encontrada",
+	"Sorry, the page you are looking for could not be found." : "Lo sentimos, la página que estás buscando no se pudo encontrar.",
+	"Sorry, you are forbidden from accessing this page." : "Lo sentimos, está prohibido acceder a esta página.",
+	"Go Home" : "Regresar a Inicio",
+
+	"Login" : "Ingreso al Sistema",
+	"E-Mail Address" : "Correo Electrónico",
+	"Password" : "Contraseña",
+	"LoginBtn" : "Ingresar",
+	"Forgot Your Password?" : "Recuperar Contraseña ",
+	"Reset Password" : "Resetear Contraseña",
+	"ResetBtn Password" : "Resetear",
+	"Send Password Reset Link" : "Envíar enlace de recuperación",
+
+	"Register" : "Registrar",
+	"Logout" : "Salir",
+
+	"Name" : "Nombre",
+	"Confirm Password" : "Confirmar Contraseña",
+	"Phone" : "Teléfono",
+	"Username" : "Nombre de Usuario"
+}
