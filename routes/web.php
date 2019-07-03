@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\Libro;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,7 +14,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('welcome',['libros'=> Libro::where('stock', '>',0)->get()]);
 });
 
 //Auth::routes(['register' => false]);

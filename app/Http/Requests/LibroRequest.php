@@ -39,8 +39,8 @@ class LibroRequest extends FormRequest
                     'numero_paginas' => 'required|min:0|numeric',
                     'stock' => 'required|min:0|numeric',
                     'descripcion' => 'nullable',
-                    'portada' => 'required|file|mimes:jpeg,bmp,png',
-                    'libro_pdf' => 'required|file|mimes:pdf'
+                    'portada' => 'nullable|file|mimes:jpeg,bmp,png',
+                    'libro_pdf' => 'nullable|file|mimes:pdf,docx'
                 ];
                 return $rules;
             }
@@ -55,8 +55,8 @@ class LibroRequest extends FormRequest
                     'numero_paginas' => 'required|min:0|numeric',
                     'stock' => 'required|min:0|numeric',
                     'descripcion' => 'nullable',
-                    'portada' => 'required|file|mimes:jpeg,bmp,png',
-                    'libro_pdf' => 'required|file|mimes:pdf'
+                    'portada' => 'nullable|file|mimes:jpeg,bmp,png',
+                    'libro_pdf' => 'nullable|file|mimes:pdf,docx'
                 ];
                 return $rules;
             }

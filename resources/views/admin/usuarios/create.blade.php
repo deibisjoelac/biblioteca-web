@@ -19,7 +19,7 @@
 								</div>
 								<div class="form-group col-md-6">
 									<label for="telefono">Teléfono</label>
-									<input name="telefono" class="form-control"   value="{{ old('telefono','')}}" >
+									<input name="telefono" class="form-control solo-numeros"   value="{{ old('telefono','')}}"   maxlength="9">
 								</div>
 							</div>
 							<div class="row">
@@ -32,7 +32,7 @@
 									<input name="username" class="form-control"  value="{{ old('username','')}}" >
 								</div>
 							</div>
-							
+
 							<div class="row">
 								<div class="form-group col-md-6">
 									<label for="password">Nueva Contraseña</label>
@@ -43,7 +43,7 @@
 									<input name="password_confirmation" class="form-control"  type="password">
 								</div>
 							</div>
-						
+
 							<div class="form-group row mb-0">
 								<div class="col-md-6 ">
 									<button type="submit" class="btn btn-success">
@@ -51,13 +51,13 @@
 									</button>
 									<a href="{{ route('usuarios.index')}}" class="btn btn-warning">Volver a Listado</a>
 								</div>
-								
+
 							</div>
 						</form>
 					</div>
 				</div>
 			</div>
-			
+
 		</div>
 	</div>
 @endsection

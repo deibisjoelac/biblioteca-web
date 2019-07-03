@@ -38,7 +38,7 @@
 								<div class="form-group col-md-6">
 									<label for="telefono">Teléfono</label>
 									<input name="telefono" class="form-control solo-numeros"  value="{{ old('telefono','')}}"
-                                         maxlength="8">
+                                         maxlength="9">
 								</div>
 							</div>
 							<div class="row">
