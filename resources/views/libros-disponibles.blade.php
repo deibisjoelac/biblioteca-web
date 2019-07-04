@@ -6,14 +6,14 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">Bienvenido ,  {{ auth()->user()->nombre}} </h5>
-                    <hr>
-                    <h6>A Continuación , El Listado de Libros registrados en el Sistema</h6>
+
+                    <h6>A Continuación , El Listado de Libros disponibles </h6>
                 </div>
             </div>
         </div>
     </div>
     <div class="row mt-2">
+
         @foreach ($libros as $libro)
             <div class="col-md-5">
                 <div class="card">

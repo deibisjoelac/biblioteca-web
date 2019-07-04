@@ -48,7 +48,7 @@ class LibroRequest extends FormRequest
             case 'PATCH':
             {
                 $rules = [
-                    'nombre' =>'required|min:4|unique:libros,nombre,'.$libro->id,
+                    'nombre' =>'required|min:4|unique:libros,nombre,'.$this->libro->id,
                     'editorial' =>'required|min:4',
                     'categoria' =>'required|min:4',
                     'autor' =>'required|min:4',

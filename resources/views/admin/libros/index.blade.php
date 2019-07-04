@@ -54,8 +54,17 @@
 											</td>
 											<td>{{ $libro->numero_paginas}} Páginas</td>
                                             <td>{{ $libro->descripcion}}</td>
-                                            <td><a  href="{{ Storage::url($libro->portada) }}" target="_blank" ><img src="{{ Storage::url($libro->portada) }}" width="50" /></a></td>
-                                            <td><a href="{{ Storage::url($libro->libro_pdf) }}"  target="_blank">Libro PDF</a> </td>
+
+                                            <td>
+                                                @if($libro->portada)
+                                                    <a  href="{{ Storage::url($libro->portada) }}" target="_blank" ><img src="{{ Storage::url($libro->portada) }}" width="50" /></a>
+                                                @endif
+                                            </td>
+                                            <td>
+                                                @if($libro->libro_pdf)
+                                                    <a href="{{ Storage::url($libro->libro_pdf) }}"  target="_blank">Libro PDF</a>
+                                                @endif
+                                            </td>
 											<td>
 												<a href="{{ route('libros.edit', $libro) }}">
 													<i class="fa fa-edit fs-25"></i>

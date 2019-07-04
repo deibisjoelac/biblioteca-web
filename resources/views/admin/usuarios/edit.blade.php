@@ -27,7 +27,7 @@
 							<div class="row">
 								<div class="form-group col-md-6">
 									<label for="email">Email</label>
-									<input name="email" class="form-control" value="{{ old('email',$usuario->email)}}"  >
+									<input name="email" class="form-control" value="{{ old('email',$usuario->email)}}"   type="email" >
 								</div>
 								<div class="form-group col-md-6">
 									<label for="username">Usuario</label>
@@ -44,14 +44,14 @@
 									<input name="password_confirmation" class="form-control"  type="password">
 								</div>
 							</div>
-							
+
 							<button class="btn btn-success">Guardar</button>
 							<a href="{{ route('usuarios.index')}}" class="btn btn-warning">Volver a Listado</a>
 						</form>
 					</div>
 				</div>
 			</div>
-			
+
 		</div>
 	</div>
 @endsection

@@ -10,7 +10,7 @@
 					</div>
 					<div class="card-body">
 						@include('partials.error-messages')
-						<form action="{{ route('libros.update', $libro) }}" method="POST" autocomplete="off">
+						<form action="{{ route('libros.update', $libro) }}" method="POST" autocomplete="off" enctype="multipart/form-data">
 							@csrf
 							@method('PUT')
 							<div class="row">

@@ -14,8 +14,12 @@ use App\Models\Libro;
 */
 
 Route::get('/', function () {
-    return view('welcome',['libros'=> Libro::where('stock', '>',0)->get()]);
-});
+    return view('welcome');
+})->name('index');
+
+Route::get('/libros-disponibles', function () {
+    return view('libros-disponibles',['libros'=> Libro::where('stock', '>',0)->get()]);
+})->name('librosdisponibles');
 
 //Auth::routes(['register' => false]);
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');

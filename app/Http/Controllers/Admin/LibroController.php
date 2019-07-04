@@ -38,8 +38,15 @@ class LibroController extends Controller
      */
     public function store(LibroRequest $request)
     {
-        $portada = $request->portada->store('libros/portadas');
-        $libro_pdf = $request->libro_pdf->store('libros/pdf');
+        $portada = null;
+        $libro_pdf = null;
+        if($request->hasFile('portada')){
+            $portada = $request->portada->store('libros/portadas');
+        }
+        if($request->hasFile('libro_pdf')){
+            $libro_pdf = $request->libro_pdf->store('libros/pdf');
+        }
+
 		Libro::create($request->only('nombre','editorial','categoria','autor','numero_paginas','stock','descripcion')+ ['portada'=> $portada,'libro_pdf'=> $libro_pdf]);
 		return redirect()->route('libros.index')->withSuccess('Libro registrado correctamente! ');
     }
@@ -77,8 +84,16 @@ class LibroController extends Controller
      */
     public function update(LibroRequest $request, Libro $libro)
     {
-        Storage::delete($libro->portada);
-        Storage::delete($libro->libro_pdf);
+        $portada = null;
+        $libro_pdf = null;
+        if($libro->portada) Storage::delete($libro->portada);
+        if($libro->libro_pdf) Storage::delete($libro->libro_pdf);
+        if($request->hasFile('portada')){
+            $portada = $request->portada->store('libros/portadas');
+        }
+        if($request->hasFile('libro_pdf')){
+            $libro_pdf = $request->libro_pdf->store('libros/pdf');
+        }
 		$libro->update($request->only('nombre','editorial','categoria','autor','numero_paginas','stock','descripcion')+['portada'=> $portada,'libro_pdf'=> $libro_pdf]);
 		return redirect()->route('libros.index')->withSuccess('Libro actualizado correctamente! ');
     }
@@ -92,7 +107,7 @@ class LibroController extends Controller
     public function destroy(Libro $libro)
     {
 		// $libro->update(['estado'=> !! $libro->estado]);
-		// return redirect()->route('libros.index')->withSuccess( ($libro->estado ? 
+		// return redirect()->route('libros.index')->withSuccess( ($libro->estado ?
 		// 				'Libro activado correctamente! ' : 'Libro dado de baja correctamente! '));
     }
 }

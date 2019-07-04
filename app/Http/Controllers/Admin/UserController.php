@@ -15,7 +15,7 @@ class UserController extends Controller
 			return view('admin.usuarios.index', [ 'usuarios'=> User::where('id','!=',1)->get()]);
 		}
 		return redirect()->route('admin');
-		
+
 	}
 
 	public function create()
@@ -23,7 +23,7 @@ class UserController extends Controller
 		if(auth()->user()->isAdmin()){
 			return view('admin.usuarios.create');
 		}
-		
+
 		return redirect()->route('admin');
 	}
 
@@ -39,7 +39,7 @@ class UserController extends Controller
 	{
 		$rules =  [
 			'nombre' => ['required', 'string', 'max:150','unique:users,nombre,'. $usuario->id],
-			'telefono' => ['nullable'],
+			'telefono' => ['nullable|min:9|max:9'],
 			'email' => ['nullable','unique:users,email,'. $usuario->id],
             'username' => ['required', 'string',  'max:150', 'unique:users,username,'. $usuario->id],
 		];
@@ -60,6 +60,6 @@ class UserController extends Controller
 
 	public function destroy(User $usuario)
 	{
-		
+
 	}
 }
